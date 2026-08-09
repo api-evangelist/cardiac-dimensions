@@ -1,10 +1,20 @@
 aid: cardiac-dimensions
 name: Cardiac Dimensions
-description: 'Cardiac Dimensions is a company surfaced via the API Evangelist harvest backlog (source:
-  secondary-market) and added to the network as a stub for full-pipeline profiling.'
+description: 'Cardiac Dimensions is a privately held structural-heart medical device
+  company headquartered in Kirkland, Washington, developing transcatheter therapies
+  for patients with heart failure and functional mitral regurgitation. Its lead product
+  is the CARILLON Mitral Contour System, a minimally invasive, catheter-delivered
+  implant placed in the coronary sinus to reshape the mitral valve annulus and reduce
+  functional mitral regurgitation without open-heart surgery. CARILLON carries a CE
+  Mark in Europe and remains an investigational device in the United States, where
+  the company is completing the EMPOWER pivotal trial. Cardiac Dimensions closed an
+  oversubscribed $53M Series E in March 2025 led by Ally Bridge Group. The company
+  manufactures an implantable Class III medical device and operates no public developer
+  program, API, or software platform.'
 url: https://raw.githubusercontent.com/api-evangelist/cardiac-dimensions/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
+x-secondary-market: https://forgeglobal.com/cardiac-dimensions_stock/
 x-tier: stub
 x-tier-reason: harvest
 specificationVersion: '0.20'
@@ -12,6 +22,13 @@ created: '2026-08-09'
 modified: '2026-08-09'
 tags:
 - Company
+- Medical Devices
+- Cardiology
+- Heart Failure
+- Structural Heart
+- Transcatheter
+- Health Care
+- Medical Technology
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +36,34 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/cardiac-dimensions-domain-security.yml
 - type: Website
-  url: https://forgeglobal.com/cardiac-dimensions_stock/
+  url: https://cardiacdimensions.com/
+x-enrichment:
+  date: '2026-08-09'
+  status: minimal
+  artifacts_added: 1
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: not-a-software-company
+  detail: >-
+    Cardiac Dimensions manufactures the CARILLON Mitral Contour System, an implantable
+    Class III cardiac device, and certificate-transparency enumeration of every
+    certificate ever issued for cardiacdimensions.com returns only mail, autodiscover,
+    sslvpn, staging1/2 and www hosts — no api, developer, docs or portal hostname has
+    ever existed — while the WordPress marketing site itself answers every path,
+    including the homepage, with a SiteGround sgcaptcha interstitial.
+  evidence:
+    - url: https://crt.sh/json?q=cardiacdimensions.com
+      status: 200
+    - url: https://cardiacdimensions.com/developers
+      status: 202
+    - url: https://cardiacdimensions.com/openapi.json
+      status: 202
+    - url: https://cardiacdimensions.com/.well-known/agent-card.json
+      status: 202
+    - url: https://github.com/cardiacdimensions
+      status: 404
+  checked: '2026-08-09'
